@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@model IList<HomNayXemGi.Models.Movie>
+
+<h2>Index</h2>
+
+@foreach (var item in Model)
+{
+    <p>
+    @item.Name + @item.Id + @item.Image + @Html.Raw(item.Info) <br />
+    @Html.ActionLink("Detail","Detail", new { id = @item.Id})    
+    </p>
+}

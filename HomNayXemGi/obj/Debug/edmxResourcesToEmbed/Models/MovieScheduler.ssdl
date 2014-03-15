@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieSchedulerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MovieSchedulerModelStoreContainer">
+    <EntitySet Name="Movie" EntityType="MovieSchedulerModel.Store.Movie" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Scheduler" EntityType="MovieSchedulerModel.Store.Scheduler" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Scheduler__Movie__0519C6AF" Association="MovieSchedulerModel.Store.FK__Scheduler__Movie__0519C6AF">
+      <End Role="Movie" EntitySet="Movie" />
+      <End Role="Scheduler" EntitySet="Scheduler" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Producer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Length" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Image" Type="varchar" MaxLength="200" />
+    <Property Name="DetailLink" Type="varchar" MaxLength="200" />
+    <Property Name="Info" Type="nvarchar(max)" />
+    <Property Name="MvSource" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Scheduler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="int" />
+    <Property Name="CumRap" Type="varchar" MaxLength="30" />
+    <Property Name="TenRap" Type="nvarchar" MaxLength="50" />
+    <Property Name="NgayChieu" Type="varchar" MaxLength="10" />
+    <Property Name="SuatChieu" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__Scheduler__Movie__0519C6AF">
+    <End Role="Movie" Type="MovieSchedulerModel.Store.Movie" Multiplicity="0..1" />
+    <End Role="Scheduler" Type="MovieSchedulerModel.Store.Scheduler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Scheduler">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
