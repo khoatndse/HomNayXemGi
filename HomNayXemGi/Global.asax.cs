@@ -23,6 +23,7 @@ namespace HomNayXemGi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             BundleMobileConfig.RegisterBundles(BundleTable.Bundles);
+            ClinicoBundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
     }

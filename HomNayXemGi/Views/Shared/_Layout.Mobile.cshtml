@@ -1,32 +1,115 @@
-﻿<!DOCTYPE html> 
-<html> 
-    <head> 
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title</title> 
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/Mobile/css", "~/Content/jquerymobile/css")
-        @Scripts.Render("~/bundles/jquery", "~/bundles/jquerymobile")
-        <script>
-            $(document).ready(function () {
-                $.mobile.ajaxEnabled = false; 
-            });
-        </script>
-    </head> 
-<body> 
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/Clinco/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-other")
+    @Scripts.Render("~/bundles/clinico")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="page">
+        <!-- page header -->
+        <header class="page-header main-page">
+				<!-- logo -->
+				<section id="logo" class="logo">
+					<div>
+						<a href="index-2.html"><img src="@Url.Content("~/Content/Clinico/img/green/logo.png")" width="190" height="50" alt="Clinico"></a>
+					</div>
+				</section>
+				<!--/ logo -->
+                <!-- mobile nav -->
+				<nav id="mobile-main-nav" class="mobile-main-nav">
+					<i class="fa fa-bars"></i><a href="#" class="opener">Menu</a>
+					<ul>
+                    <li>
+							<a href="services.html">Trang chủ</a>
+						</li>
+						<li>
+							<a href="services.html">Danh sách phim</a>
+						</li>
+						<li>
+							<a href="contacts.html">Liên hệ</a>
+						</li>
+					</ul>
+				</nav>
+				<!--/ mobile nav -->
+                </header>
+        <!-- quick search -->
+        <form id="quick-search" class="quick-search">
+        <fieldset>
+            <legend>Tìm kiếm:</legend>
+            <input type="text" placeholder="Tên rạp/phim:">
+            <button type="submit">
+                Search</button>
+                <div class="switcher">
+						<button id="quick-search-switcher" type="button">Tìm phim/rạp</button>
+					</div>
+        </fieldset>
+        </form>
+        <!--/ quick search -->
+        <!-- page title -->
+        <section class="page-title">
+				<div class="grid-row clearfix">
+					<h1>Hôm nay xem gì</h1>
+					
+					<nav class="bread-crumbs">
+						@Html.ActionLink("Danh sách phim","Index","Home")
+                        @RenderSection("MoreInfo", false)
+					</nav>
+				</div>
+			</section>
+        <!--/ page title -->
+        <main class="page-content">
+             @RenderBody()
+            </main>
+        <!-- page footer -->
+        <footer class="page-footer">
+				<a href="#" id="top-link" class="top-link"><i class="fa fa-angle-double-up"></i></a>
+                <div class="grid-row">		
+					<div class="grid-col grid-col-3">
+						<!-- location -->
+						<section class="widget-alt location">
+							<div class="widget-icon"></div>
+							<div class="widget-title">Thông tin liên hệ</div>
+							<address>HNXG là 1 ứng dụng miễn phí của Happy Code. Mọi góp ý liên hệ vui lòng gửi theo địa chỉ dưới.</address>
+							<ul>
+								<li><i class="fa fa-phone"></i>0932.575868</li>
+								<li><i class="fa fa fa-envelope"></i>huyhoang8a5@gmail.com</li>
+								<li><i class="fa fa-skype"></i>Phạm Huy Hoàng</li>
+							</ul>
+							<nav>
+								<a href="#" class="fa fa-twitter"></a>
+								<a href="#" class="fa fa-facebook"></a>
+								<a href="#" class="fa fa-instagram"></a>
+							</nav>
+						</section>
+						<!--/ location -->	
+				</div>
+                </div>
+			</footer>
+        <!--/ page footer -->
+        <!-- copyrights -->
+        <div class="copyrights">
+            Copyrights ©2014: Hôm nay xem gì - Happy Code <br />
+             @Html.Partial("_ViewSwitcher")
+        </div>
+        <!--/ copyrights -->
+    </div>
 
-    <div data-role="page" data-theme="a">
+
+    @*<div data-role="page" data-theme="a">
         @Html.Partial("_ViewSwitcher")
-
         <div data-role="header">
             <h1>@ViewBag.Title</h1>
         </div>
-
         <div data-role="content">
             @RenderSection("featured", false)
-            @RenderBody()		
+            @RenderBody()
         </div>
-
-    </div>
-
+    </div>*@
 </body>
 </html>

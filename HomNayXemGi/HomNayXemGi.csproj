@@ -161,6 +161,7 @@
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\BundleMobileConfig.cs" />
+    <Compile Include="App_Start\ClinicoBundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -181,6 +182,104 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Clinico\css\blank.gif" />
+    <Content Include="Content\Clinico\css\color-green.css" />
+    <Content Include="Content\Clinico\css\font-awesome.css" />
+    <Content Include="Content\Clinico\css\fullwidth\loading.gif" />
+    <Content Include="Content\Clinico\css\fullwidth\skin.css" />
+    <Content Include="Content\Clinico\css\fullwidth\skin.png" />
+    <Content Include="Content\Clinico\css\jquery.fancybox.css" />
+    <Content Include="Content\Clinico\css\layerslider.css" />
+    <Content Include="Content\Clinico\css\owl.carousel.css" />
+    <Content Include="Content\Clinico\css\styles.css" />
+    <Content Include="Content\Clinico\fonts\fontawesome-webfontba72.svg" />
+    <Content Include="Content\Clinico\img\blank.gif" />
+    <Content Include="Content\Clinico\img\fancybox_loading%402x.gif" />
+    <Content Include="Content\Clinico\img\fancybox_loading.gif" />
+    <Content Include="Content\Clinico\img\fancybox_overlay.png" />
+    <Content Include="Content\Clinico\img\fancybox_sprite%402x.png" />
+    <Content Include="Content\Clinico\img\fancybox_sprite.png" />
+    <Content Include="Content\Clinico\img\find.png" />
+    <Content Include="Content\Clinico\img\green\last-news%402x.png" />
+    <Content Include="Content\Clinico\img\green\last-news.png" />
+    <Content Include="Content\Clinico\img\green\location%402x.png" />
+    <Content Include="Content\Clinico\img\green\location.png" />
+    <Content Include="Content\Clinico\img\green\logo.png" />
+    <Content Include="Content\Clinico\img\green\quick-search.png" />
+    <Content Include="Content\Clinico\img\green\recent-posts%402x.png" />
+    <Content Include="Content\Clinico\img\green\recent-posts.png" />
+    <Content Include="Content\Clinico\img\green\select.png" />
+    <Content Include="Content\Clinico\img\green\work-time%402x.png" />
+    <Content Include="Content\Clinico\img\green\work-time.png" />
+    <Content Include="Content\Clinico\img\header.png" />
+    <Content Include="Content\Clinico\img\progress-bar.png" />
+    <Content Include="Content\Clinico\img\select.png" />
+    <Content Include="Content\Clinico\js\greensock.js" />
+    <Content Include="Content\Clinico\js\3.jquery-ui-tabs-rotate.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Content\Clinico\js\jquery.fancybox-media.js" />
+    <Content Include="Content\Clinico\js\jquery.fancybox.pack.js" />
+    <Content Include="Content\Clinico\js\jquery.flot.categories.js" />
+    <Content Include="Content\Clinico\js\jquery.flot.js" />
+    <Content Include="Content\Clinico\js\jquery.flot.pie.js" />
+    <Content Include="Content\Clinico\js\jquery.isotope.min.js" />
+    <Content Include="Scripts\jquery.migrate.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Content\Clinico\js\jquery.superscrollorama.js" />
+    <Content Include="Content\Clinico\js\jquery.tweet.js" />
+    <Content Include="Content\Clinico\js\4.jquery.ui.accordion.min.js" />
+    <Content Include="Content\Clinico\js\0.jquery.ui.core.min.js" />
+    <Content Include="Content\Clinico\js\2.jquery.ui.tabs.min.js" />
+    <Content Include="Content\Clinico\js\1.jquery.ui.widget.min.js" />
+    <Content Include="Content\Clinico\js\layerslider.kreaturamedia.jquery.js" />
+    <Content Include="Content\Clinico\js\layerslider.transitions.js" />
+    <Content Include="Content\Clinico\js\owl.carousel.min.js" />
+    <Content Include="Content\Clinico\js\scripts.js" />
+    <Content Include="Content\Clinico\js\TimelineMax.min.js" />
+    <Content Include="Content\Clinico\js\TweenMax.min.js" />
+    <Content Include="Content\Clinico\pic\404_mask.png" />
+    <Content Include="Content\Clinico\pic\doctor-1.jpg" />
+    <Content Include="Content\Clinico\pic\doctor-2.jpg" />
+    <Content Include="Content\Clinico\pic\doctor-3.jpg" />
+    <Content Include="Content\Clinico\pic\doctor-4.jpg" />
+    <Content Include="Content\Clinico\pic\expert-1.png" />
+    <Content Include="Content\Clinico\pic\expert-2.png" />
+    <Content Include="Content\Clinico\pic\expert-3.png" />
+    <Content Include="Content\Clinico\pic\features_unlimited_color.png" />
+    <Content Include="Content\Clinico\pic\LayerSlider5.png" />
+    <Content Include="Content\Clinico\pic\medical-slide-1.jpg" />
+    <Content Include="Content\Clinico\pic\medical-slide-2.jpg" />
+    <Content Include="Content\Clinico\pic\medical-slide-3.jpg" />
+    <Content Include="Content\Clinico\pic\our-phylosophy.jpg" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\1\ipad.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\1\iphone.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\1\monitor.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\3\mac.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\4\color-1.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\4\color-2.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\4\color-3.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\4\color-4.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\4\color-5.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\4\color-6.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\5\icons-group.png" />
+    <Content Include="Content\Clinico\pic\page-retina-ready\7\one-page.png" />
+    <Content Include="Content\Clinico\pic\photo-tour-1.jpg" />
+    <Content Include="Content\Clinico\pic\photo-tour-2.jpg" />
+    <Content Include="Content\Clinico\pic\photo-tour-3.jpg" />
+    <Content Include="Content\Clinico\pic\photo-tour-4.jpg" />
+    <Content Include="Content\Clinico\pic\photo-tour-5.jpg" />
+    <Content Include="Content\Clinico\pic\photo-tour-6.jpg" />
+    <Content Include="Content\Clinico\pic\photo-tour-7.jpg" />
+    <Content Include="Content\Clinico\pic\photo-tour-8.jpg" />
+    <Content Include="Content\Clinico\pic\post\1.png" />
+    <Content Include="Content\Clinico\pic\post\2.png" />
+    <Content Include="Content\Clinico\pic\post\3.png" />
+    <Content Include="Content\Clinico\pic\services-1.png" />
+    <Content Include="Content\Clinico\pic\testimonial-1.jpg" />
+    <Content Include="Content\Clinico\pic\wellness-slide-1.jpg" />
+    <Content Include="Content\Clinico\pic\wellness-slide-2.jpg" />
+    <Content Include="Content\Clinico\pic\wellness-slide-3.jpg" />
+    <Content Include="Content\Clinico\pic\wellness-slide-4.jpg" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\ajax-loader.png" />
     <Content Include="Content\images\icons-18-black.png" />
@@ -193,7 +292,6 @@
     <Content Include="Content\jquery.mobile.structure-1.1.2.min.css" />
     <Content Include="Content\jquery.mobile.theme-1.1.2.css" />
     <Content Include="Content\jquery.mobile.theme-1.1.2.min.css" />
-    <Content Include="Content\Site.Mobile.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -267,14 +365,15 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -321,6 +420,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Clinico\fonts\fontawesome-webfontba72.eot" />
+    <None Include="Content\Clinico\fonts\fontawesome-webfontba72.ttf" />
+    <None Include="Content\Clinico\fonts\fontawesome-webfontba72.woff" />
+    <None Include="Content\Clinico\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="Views\Home\Detail.Mobile.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
