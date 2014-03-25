@@ -1,11 +1,11 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
+
+
 @model IList<HomNayXemGi.Models.Movie>
-<div class="grid-row">
-    <!-- news -->
-    <section id="news" class="widget news news-1 scroll">	
-    @foreach (var movie in Model)
+ <section id="news" class="widget news news-1">	
+ @foreach (var movie in Model)
     {
         <div class="item">
 				<h3 class="widget-title">
@@ -17,7 +17,7 @@
 								<div style="margin: 10px">
                                 @{
         var Info = movie.Info.ToString();
-        if (Info.Length > 300)
+        if (Info.Length > 350)
         {
             Info = Info.Substring(0, 300);
         }
@@ -28,14 +28,11 @@
 								<div class="cats">Thể loại: @movie.Type</div>
 							</div>
     }
-        <div style="text-align: center">
-             <a class="page-next" href="@Url.Action("Index", new {id = 2})"> Xem thêm </a> 
-        </div>
-    </section>
-</div>
 
-<script>
-    $('.scroll').jscroll({
-        autoTrigger: false
-    });
-</script>
+@if (ViewBag.Page != null)
+{
+    <div style="text-align: center">
+             <a class="page-next" href="@Url.Action("Index", new {id = ViewBag.Page})"> Xem thêm </a> 
+        </div>
+}
+     </section>

@@ -16,6 +16,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -216,6 +220,7 @@
     <Content Include="Content\Clinico\img\select.png" />
     <Content Include="Content\Clinico\js\greensock.js" />
     <Content Include="Content\Clinico\js\3.jquery-ui-tabs-rotate.js" />
+    <Content Include="Content\Clinico\js\jquery.jscroll.min.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Content\Clinico\js\jquery.fancybox-media.js" />
     <Content Include="Content\Clinico\js\jquery.fancybox.pack.js" />
@@ -427,6 +432,7 @@
     <None Include="Content\Clinico\fonts\fontawesome-webfontba72.woff" />
     <None Include="Content\Clinico\fonts\fontawesome-webfontd41d.eot" />
     <Content Include="Views\Home\Detail.Mobile.cshtml" />
+    <Content Include="Views\Home\PartialMovies.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

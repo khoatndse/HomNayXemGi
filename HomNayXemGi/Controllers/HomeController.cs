@@ -14,10 +14,28 @@ namespace HomNayXemGi.Controllers
         private MovieDAO Movies = new MovieDAO();
         private TicketDAO Tickets = new TicketDAO();
 
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
+            int resultPerPage = 8;
             IList<Models.Movie> OnShowingMovies = Movies.GetAll();
-            return View(OnShowingMovies);
+
+            int page = id ?? 1;
+            if (page == 1)
+            {
+                return View(OnShowingMovies.Take(resultPerPage).ToList());
+            }
+            else
+            {
+                var PagingMovies = OnShowingMovies
+                                  .Skip((page - 1) * resultPerPage)
+                                  .Take(resultPerPage).ToList();
+
+                if (page * resultPerPage < OnShowingMovies.Count)
+                {
+                    ViewBag.Page = page + 1;
+                }
+                return View("PartialMovies", PagingMovies);
+            }
         }
 
         public ActionResult Detail(int id)
