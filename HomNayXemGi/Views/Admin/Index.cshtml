@@ -1,0 +1,62 @@
+﻿@model IList<HomNayXemGi.Models.Movie>
+
+@{
+    ViewBag.Title = "title";
+}
+
+
+<script>
+    $(document).ready(function() {
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var submitUrl = $(this).attr('action');
+            var loadURL = '@Url.Action("Index", "Admin", new {password = 10111995})';
+            $.ajax({
+                url: submitUrl,
+                type: "POST",
+                data: $(this).serialize(),
+                success: function (data) {
+                    $('#loadSection').load(loadURL + ' #loadSection');
+                }
+            });
+        });
+    });
+</script>
+
+
+<div class="grid-row" id="loadSection">
+    
+    @using (Html.BeginForm("Merge","Admin")) {
+        <p>Total @Model.Count movies</p>
+
+        <button class="wpb_button wpb_btn-alt wpb_regularsize">Merge Data</button>
+        <table>
+            <thead>
+                <tr>
+                    <th width="10%">Merge to this</th>
+                    <th width="10%">Select</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model)
+                {
+                    <tr>
+                        <td> <input type="checkbox" name="mergeMovieID" value="@movie.Id"/> </td>
+                        <td> <input type="checkbox" name="selectedMovieID" value="@movie.Id" /> </td>
+                        <td> <img height="100px" src="@movie.Image"/></td>
+                        <td> @movie.Name </td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <button class="wpb_button wpb_btn-alt wpb_regularsize">Merge Data</button>
+    }
+    
+</div>
+
+
