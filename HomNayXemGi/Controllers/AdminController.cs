@@ -19,7 +19,7 @@ namespace HomNayXemGi.Controllers
         {
             if (password.HasValue && password.Value == 10111995)
             {
-                var movies = Movies.GetAll().OrderBy(mv => mv.Name).ToList();
+                var movies = Movies.GetAll().OrderBy(mv => mv.MovieType).ThenBy(mv => mv.Name).ToList();
                 return View(movies);
             }
             return RedirectToAction("Index", "Home");
@@ -27,8 +27,8 @@ namespace HomNayXemGi.Controllers
 
         public ActionResult Merge(int mergeMovieID, List<int> selectedMovieID)
         {
-            var movies = Movies.GetAll().OrderBy(mv => mv.Name).ToList();
-            ViewBag.Message = "hello world" + mergeMovieID;
+           Tickets.MergeMovieInfo(mergeMovieID,selectedMovieID);
+           var movies = Movies.GetAll().OrderBy(mv => mv.MovieType).ThenBy(mv => mv.Name).ToList();
             return PartialView("_Movies", movies);
         }
     }

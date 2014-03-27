@@ -29,25 +29,26 @@
 
 <section class="widget comments">	
 							<div class="widget-title">Lịch chiếu</div>
-                            <ul>
-                           @foreach (var i in Model.Schedulers.Select(sche=>sche.RapChieu).Distinct())
-                           {
-       
-								<li>
-									<div class="avatar"><i class="fa fa-calendar"></i></div>
-									<div class="text">
-										<div class="author"><h2>@i.CumRap - @i.TenRap</h2></div>
-										 @foreach (var j in Model.Schedulers.Where(d => d.RapChieu == i))
-           {
-            <div>
-                <p class="date">@j.NgayChieu</p> @j.SuatChieu
-            </div>
-           }
-									</div>
-								</li>
+    <ul>
+
+
+        @foreach (var i in Model.Schedulers.Select(sche=>sche.RapChieu).Distinct())
+        {
+            <li>
+                <div class="avatar"><i class="fa fa-calendar"></i></div>
+                <div class="text">
+                    <div class="author"><h2>@i.CumRap - @i.TenRap</h2></div>
+                    @foreach (var j in Model.Schedulers.Where(d => d.RapChieu == i))
+                    {
+                        <div>
+                            <p class="date">@j.NgayChieu</p> @j.SuatChieu
+                        </div>
+                    }
+                </div>
+            </li>
 							
-                           }
-</ul>
+        }
+    </ul>
  
  </section>
 </div>

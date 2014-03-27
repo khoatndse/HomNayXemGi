@@ -41,7 +41,12 @@ namespace HomNayXemGi.Models
             }
 
             // Return true if the fields match:
-            return (CumRap.Equals(p.CumRap)) && (TenRap.Equals(p.TenRap));
+            return (CumRap.Trim().Equals(p.CumRap.Trim())) && (TenRap.Trim().Equals(p.TenRap.Trim()));
+        }
+
+        public override int GetHashCode()
+        {
+            return 13 * CumRap.GetHashCode() + 7 * TenRap.GetHashCode();
         }
 
         public static bool operator ==(RapChieu a, RapChieu b)
@@ -59,7 +64,7 @@ namespace HomNayXemGi.Models
             }
 
             // Return true if the fields match:
-            return a.CumRap.Equals(b.CumRap) && a.TenRap.Equals(b.TenRap);
+            return a.CumRap.Trim().Equals(b.CumRap.Trim()) && a.TenRap.Trim().Equals(b.TenRap.Trim());
         }
 
         public static bool operator !=(RapChieu a, RapChieu b)
@@ -67,4 +72,42 @@ namespace HomNayXemGi.Models
             return !(a == b);
         }
     }
+
+    public partial class Movie
+    {
+        public String MovieType
+        {
+            get
+            {
+                string Type = "2D";
+                if (this.Name.ToUpper().Contains("3D"))
+                {
+                    Type = "3D";
+                }
+                return Type;
+            }
+            set
+            {
+
+            }
+        }
+
+        public String CumRap()
+        {
+            String result = "";
+            var CumRaps = this.Schedulers.Select(sche => sche.CumRap).Distinct().ToList();
+            if (CumRaps.Count > 0)
+            {
+                foreach (var cumRap in CumRaps)
+                {
+                    result += cumRap + ", ";
+                }
+                result = result.Substring(0, result.Length - 2);
+            }
+            return result;
+        }
+    }
+
+   
+
 }

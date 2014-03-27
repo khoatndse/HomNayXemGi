@@ -6526,3 +6526,11 @@ a.page-next
     font-weight:bold;
     font-size:115%;
 }
+
+.fixed-postion-div 
+{
+    position:fixed;
+    right: 20px;
+    top:200px;
+    border-color: black;
+}

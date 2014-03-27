@@ -30,32 +30,38 @@
     @using (Html.BeginForm("Merge","Admin")) {
         <p>Total @Model.Count movies</p>
 
-        <button class="wpb_button wpb_btn-alt wpb_regularsize">Merge Data</button>
-        <table>
+    <div class="fixed-postion-div">
+        <button class="wpb_button wpb_btn-alt wpb_btn-large">Merge Data</button>
+    </div>
+
+            <table>
             <thead>
                 <tr>
                     <th width="10%">Merge to this</th>
                     <th width="10%">Select</th>
                     <th>Image</th>
+                    <th>Type</th>
+                    <th>Cụm rạp</th>
                     <th>Name</th>
-                 
+                    <th>Thể loại</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var movie in Model)
                 {
                     <tr>
-                        <td> <input type="checkbox" name="mergeMovieID" value="@movie.Id"/> </td>
+                        <td> <input type="radio" name="mergeMovieID" value="@movie.Id"/> </td>
                         <td> <input type="checkbox" name="selectedMovieID" value="@movie.Id" /> </td>
                         <td> <img height="100px" src="@movie.Image"/></td>
+                        <th>@movie.MovieType</th>
+                        <th>@movie.CumRap()</th>
                         <td> @movie.Name </td>
+                        <td>@movie.Type</td>
                         
                     </tr>
                 }
             </tbody>
         </table>
-
-        <button class="wpb_button wpb_btn-alt wpb_regularsize">Merge Data</button>
     }
     
 </div>
