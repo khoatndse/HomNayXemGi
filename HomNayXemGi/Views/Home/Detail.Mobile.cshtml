@@ -35,7 +35,11 @@
         @foreach (var i in Model.Schedulers.Select(sche=>sche.RapChieu).Distinct())
         {
             <li>
-                <div class="avatar"><i class="fa fa-calendar"></i></div>
+                <div class="avatar">
+                
+              @*  <i class="fa fa-calendar"></i>*@  
+                <img src="@Url.Content("~/Content/images/" + i.LogoUrl())" />
+                </div>
                 <div class="text">
                     <div class="author"><h2>@i.CumRap - @i.TenRap</h2></div>
                     @foreach (var j in Model.Schedulers.Where(d => d.RapChieu == i))

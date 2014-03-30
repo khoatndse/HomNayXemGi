@@ -56,8 +56,8 @@
 					<h1>Danh sách phim</h1>
 					
 					<nav class="bread-crumbs">
-						<a href="index-2.html">Trang chủ</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;
-						<a href="#">Danh sách phim</a>
+							@Html.ActionLink("Danh sách phim","Index","Home")
+                        @RenderSection("MoreInfo", false)
 					</nav>
 				</div>
 			</section>

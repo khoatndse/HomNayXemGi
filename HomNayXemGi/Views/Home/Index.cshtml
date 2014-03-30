@@ -3,12 +3,58 @@
 }
 @model IList<HomNayXemGi.Models.Movie>
 <div class="grid-row">
+    <div class="grid-col grid-col-4 ">
+        <div class="widget-title">
+            Danh sách phim
+        </div>
+        <div class="movie-column">
+            @foreach (var item in Model)
+            {  
+                <div class="callout">
+                    <div class="icon">
+                        <img src="@item.Image" />
+                    </div>
+                    <div class="callout-wrapper">
+                        <div class="callout-content">
+                            <div class="title" style="color:Black">
+                                @item.Name <br />
+                                <a href="@Url.Action("Detail", new { id = item.Id })" class="wpb_button wpb_btn-alt wpb_btn-rounded wpb_btn-mini">Chi tiết</a>
+                                </div>
+                                
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
     <div class="grid-col grid-col-4">
-        Column 1</div>
+        <div class="widget-title">
+            Danh sách rạp
+        </div>
+         <div class="movie-column">
+            <div class="callout">
+                    <div class="icon">
+                        <img src="@Url.Content("~/Content/images/cgv.png")" />
+                    </div>
+                    <div class="callout-wrapper">
+                        <div class="callout-content">
+                            <div class="title" style="color:Black">
+                                CGV - Lovely
+                        </div>
+                    </div>
+                </div>
+                </div>
+         </div>
+    </div>
     <div class="grid-col grid-col-4">
-        Column 2</div>
-    <div class="grid-col grid-col-4">
-        Column 3</div>
+        <div class="widget-title">
+            Suất chiếu
+        </div>
+
+        <div class="suat-chieu">
+        Suất chiếu
+        </div>
+    </div>
 </div>
 @*@foreach (var item in Model)
 {

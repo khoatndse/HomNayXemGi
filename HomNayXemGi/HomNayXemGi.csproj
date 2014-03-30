@@ -169,6 +169,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ViewSwitcherController.cs" />
     <Compile Include="DAL\DALInterface.cs" />
@@ -222,6 +223,9 @@
     <Content Include="Content\Clinico\js\greensock.js" />
     <Content Include="Content\Clinico\js\3.jquery-ui-tabs-rotate.js" />
     <Content Include="Content\Clinico\js\jquery.jscroll.min.js" />
+    <Content Include="Content\images\cgv.png" />
+    <Content Include="Content\images\galaxy.png" />
+    <Content Include="Content\images\lotte.png" />
     <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Content\Clinico\js\jquery.fancybox-media.js" />
     <Content Include="Content\Clinico\js\jquery.fancybox.pack.js" />
@@ -434,6 +438,8 @@
     <None Include="Content\Clinico\fonts\fontawesome-webfontd41d.eot" />
     <Content Include="Views\Home\Detail.Mobile.cshtml" />
     <Content Include="Views\Home\PartialMovies.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\_Movies.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

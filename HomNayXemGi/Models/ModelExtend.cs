@@ -25,6 +25,23 @@ namespace HomNayXemGi.Models
         public String CumRap { get; set; }
         public String TenRap { get; set; }
 
+        public String LogoUrl()
+        {
+            String url = "";
+            switch (this.CumRap)
+            {
+                case "Lotte":
+                    url = "lotte.png";
+                    break;
+                case "Cgv":
+                    url = "cgv.png";
+                    break;
+                case "Galaxy":
+                    url = "galaxy.png";
+                    break;
+            }
+            return url;
+        }
         public override bool Equals(Object obj)
         {
             // If parameter is null return false.
@@ -108,6 +125,6 @@ namespace HomNayXemGi.Models
         }
     }
 
-   
+
 
 }

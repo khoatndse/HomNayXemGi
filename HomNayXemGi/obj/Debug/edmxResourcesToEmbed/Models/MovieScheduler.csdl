@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieSchedulerModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MovieSchedulerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Movies" EntityType="MovieSchedulerModel.Movie" />
+    <EntitySet Name="Schedulers" EntityType="MovieSchedulerModel.Scheduler" />
+    <AssociationSet Name="FK__Scheduler__Movie__0519C6AF" Association="MovieSchedulerModel.FK__Scheduler__Movie__0519C6AF">
+      <End Role="Movie" EntitySet="Movies" />
+      <End Role="Scheduler" EntitySet="Schedulers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Producer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Length" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="DetailLink" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MvSource" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Schedulers" Relationship="MovieSchedulerModel.FK__Scheduler__Movie__0519C6AF" FromRole="Movie" ToRole="Scheduler" />
+  </EntityType>
+  <EntityType Name="Scheduler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MovieID" Type="Int32" />
+    <Property Name="CumRap" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="TenRap" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NgayChieu" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="SuatChieu" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Movie" Relationship="MovieSchedulerModel.FK__Scheduler__Movie__0519C6AF" FromRole="Scheduler" ToRole="Movie" />
+  </EntityType>
+  <Association Name="FK__Scheduler__Movie__0519C6AF">
+    <End Role="Movie" Type="MovieSchedulerModel.Movie" Multiplicity="0..1" />
+    <End Role="Scheduler" Type="MovieSchedulerModel.Scheduler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Scheduler">
+        <PropertyRef Name="MovieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

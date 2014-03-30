@@ -372,6 +372,7 @@ a {
 .photo-tour .links a {
 	background: #00b85d;	
 }
+/*
 .photo-tour .links a:hover {
 	background: #4dcd8e;	
 }
@@ -379,7 +380,7 @@ a {
 .photo-tour .item:hover p {
 	background: #00b85d;
 }
-
+*/
 
 /**/
 /* comments */
@@ -388,7 +389,7 @@ a {
 	background: #00b85d;
 }
 .comments .avatar:before {
-	background: #4dcd8e;	
+	
 }
 
 
@@ -475,9 +476,11 @@ a {
 .callout .icon {
 	background: #00b85d;
 }
+/*
 .callout .icon:before {
 	background: #4dcd8e;
 }
+*/
 .wpb_call_to_action {
 	background: #00b85d;
 }

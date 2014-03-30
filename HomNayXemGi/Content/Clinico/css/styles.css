@@ -255,6 +255,7 @@ span.wpb_btn-small [class^="icon-"] {
   margin-top: -1px;
 }
 button.wpb_btn-mini,
+a.wpb_btn-mini,
 span.wpb_btn-mini {
   padding: 2px 6px;
   font-size: 11px;
@@ -1583,7 +1584,7 @@ nav p{
 /* layout */
 /**/
 .page-content {
-	padding-bottom: 30px;
+	
 }
 
 
@@ -1591,7 +1592,7 @@ nav p{
 /* page title */
 /**/
 .page-title {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	border-top-width: 7px;
 	border-top-style: solid;
 	color: #fff;
@@ -2354,10 +2355,12 @@ i.pic:after{
 	line-height: 56px;
 	color: #fff;
 }
+/*
 .photo-tour .item:hover h3,
 .photo-tour .item:hover p {
 	color: #fff;
 }
+
 .photo-tour .item:hover .links {
 	opacity: 1;
 }
@@ -2370,6 +2373,9 @@ i.pic:after{
 	-webkit-animation-name: slideup;
 	-webkit-animation-duration: 0.4s;
 }
+
+*/
+
 .photo-tour-1 .item {
 	width: 100%;
 }
@@ -4268,10 +4274,11 @@ p.date
 /**/
 .callout {
 	position: relative;
-	min-height: 50px;
-	padding: 23px 23px 23px 130px;
+	min-height: 70px;
+	padding: 14px 14px 14px 80px;
 	background: #f5f5f5;
 	text-align: left;
+	margin-bottom: 5px;
 }
 .callout-content, .callout-button{
   display:inline-block;
@@ -4282,7 +4289,7 @@ p.date
   font-size:0;
 }
 .callout-content{
-  width:70%;
+  width:95%;
   padding-right:10px;
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
@@ -4299,8 +4306,8 @@ p.date
 }
 .callout .title {
 	margin-bottom: 8px;
-	font-size: 30px;
-	line-height: 34px;
+	font-size: 18px;
+	line-height: 22px;
 }
 .callout .subtitle {
 	font-size: 16px;
@@ -4311,8 +4318,8 @@ p.date
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 110px;
-	height: 110px;
+	width: 70px;
+	height: 100%;
 	font-size: 54px;
 	line-height: 110px;
 	text-align: center;
@@ -4335,6 +4342,13 @@ p.date
 	border: 0;
 	color: #fff;
 }
+
+.callout img 
+{
+    width:100%;
+    height:100%;
+}
+
 @media screen and (max-width:767px){
   .wpb_call_to_action, .callout{
     padding:20px;
@@ -5465,7 +5479,7 @@ p.date
 	border-left-style: solid;
 	font-size: 26px;
 	line-height: 30px;
-	color: #000;
+	color: #00B85D;
 }
 
 
@@ -6113,7 +6127,7 @@ i.appointment{
 	line-height: 21px;
 	text-align: center;
 	text-transform: uppercase;
-	color: #fff;
+	color: #00B85D;
 }
 
 
@@ -6533,4 +6547,31 @@ a.page-next
     right: 20px;
     top:200px;
     border-color: black;
+}
+
+.movie-column
+{
+    height:400px;
+    overflow:scroll;
+}
+
+.suat-chieu
+{
+    position: relative;
+    padding: 15px 15px 0px;
+    border-width: 1px 1px;
+    border-style: solid solid;
+    height:350px;
+    border-color:#4DCD8E;
+}
+
+.bordered-div
+{
+
+}
+
+.avatar img 
+{
+    height:100%;
+    width:100%;
 }

@@ -19,6 +19,11 @@ namespace HomNayXemGi.Controllers
             int resultPerPage = 8;
             IList<Models.Movie> OnShowingMovies = Movies.GetAll();
 
+            if (!Request.Browser.IsMobileDevice)
+            {
+                return View(OnShowingMovies);
+            }
+
             int page = id ?? 1;
             if (page == 1)
             {
